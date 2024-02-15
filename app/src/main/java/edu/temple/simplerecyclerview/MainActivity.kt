@@ -2,6 +2,7 @@ package edu.temple.simplerecyclerview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -18,6 +19,9 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 4)
 
         // TODO (Step 2: Define lambda to modify displayTextView size)
+        val onSizeSelected = {size: Int ->
+            displayTextView.textSize = size.toFloat()
+        }
 
         // Todo (Step 3: Pass lambda to adapter)
         recyclerView.adapter = NumberDisplayAdapter(numbers)
